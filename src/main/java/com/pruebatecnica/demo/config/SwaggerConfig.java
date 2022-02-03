@@ -30,11 +30,11 @@ public class SwaggerConfig {
 	
 	private ApiInfo getApiInfo() {
 		return new ApiInfo(
-				"Order Service API",
-				"Order Service API Description",
+				"Demo Prueba Tecnica Service API",
+				"Demo Prueba Tecnica API Description",
 				"1.0",
-				"http://codmind.com/terms",
-				new Contact("Codmind", "https://codmind.com", "apis@codmind.com"),
+				"https://www.apache.org/licenses/LICENSE-2.0",
+				new Contact("alecea", "https://espanol.yahoo.com/?p=us", "apis@demo.com"),
 				"LICENSE",
 				"LICENSE URL",
 				Collections.emptyList()

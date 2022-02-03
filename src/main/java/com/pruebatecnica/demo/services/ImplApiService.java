@@ -14,13 +14,13 @@ import com.pruebatecnica.demo.dto.ImgDescCharacter;
 public class ImplApiService implements ApiService {
 
 	@Override
-	public CharacterModel obtenerPersonaje(String nombre, String historieta, String serie) {
+	public CharacterModel obtenerPersonaje(String usrsession, String nombre, String historieta, String serie) {
 		CharacterModel obj = new CharacterModel();
 		return obj;
 	}
 
 	@Override
-	public List<ComicModel> obtenerHistorietasPorPersonaje(String nombre) {
+	public List<ComicModel> obtenerHistorietasPorPersonaje(String usrsession, String nombre) {
 		List<ComicModel> l = new ArrayList<>();
 		ComicModel c = new ComicModel();
 		l.add(c);
@@ -28,13 +28,13 @@ public class ImplApiService implements ApiService {
 	}
 
 	@Override
-	public ImgDescCharacter obtenerImgDescPersonaje(String nombre) {
+	public ImgDescCharacter obtenerImgDescPersonaje(String usrsession, String nombre) {
 		ImgDescCharacter idc = new ImgDescCharacter();
 		return idc;
 	}
 
 	@Override
-	public List<ComicModel> obtenerHistorietas() {
+	public List<ComicModel> obtenerHistorietas(String usrsession) {
 		List<ComicModel> l = new ArrayList<>();
 		ComicModel c = new ComicModel();
 		l.add(c);
@@ -42,13 +42,13 @@ public class ImplApiService implements ApiService {
 	}
 
 	@Override
-	public ComicModel obtenerHistorietaPorId(String id) {
+	public ComicModel obtenerHistorietaPorId(String usrsession, String id) {
 		ComicModel c = new ComicModel();
 		return c;
 	}
 
 	@Override
-	public List<HistorialEntity> obtenerHistorialPorUsuario(String usuario) {
+	public List<HistorialEntity> obtenerHistorialPorUsuario(String usrsession, String usuario) {
 		List<HistorialEntity> l = new ArrayList<>();
 		HistorialEntity h = new HistorialEntity();
 		l.add(h);
@@ -56,7 +56,7 @@ public class ImplApiService implements ApiService {
 	}
 
 	@Override
-	public List<ComicModel> obtenerHistoretasPorCreador(String creador) {
+	public List<ComicModel> obtenerHistoretasPorCreador(String usrsession, String creador) {
 		List<ComicModel> l = new ArrayList<>();
 		ComicModel c = new ComicModel();
 		l.add(c);
@@ -64,7 +64,7 @@ public class ImplApiService implements ApiService {
 	}
 
 	@Override
-	public List<HistorialEntity> obtenerHistorialHistorietasPorUsuario(String usuario) {
+	public List<HistorialEntity> obtenerHistorialHistorietasPorUsuario(String usrsession, String usuario) {
 		List<HistorialEntity> l = new ArrayList<>();
 		HistorialEntity h = new HistorialEntity();
 		l.add(h);

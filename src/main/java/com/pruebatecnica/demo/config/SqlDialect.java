@@ -1,4 +1,4 @@
-package com.pruebatecnica.demo.config.sqlite;
+package com.pruebatecnica.demo.config;
 
 import java.sql.Types;
 

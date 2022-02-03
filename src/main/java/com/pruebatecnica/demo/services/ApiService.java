@@ -9,13 +9,13 @@ import com.pruebatecnica.demo.dto.ImgDescCharacter;
 
 public interface ApiService {
 
-	public CharacterModel obtenerPersonaje(String nombre, String historieta, String serie);
-	public List<ComicModel> obtenerHistorietasPorPersonaje(String nombre);
-	public ImgDescCharacter obtenerImgDescPersonaje(String nombre);
-	public List<ComicModel> obtenerHistorietas();
-	public ComicModel obtenerHistorietaPorId(String id);
-	public List<HistorialEntity> obtenerHistorialPorUsuario(String usuario);
-	public List<ComicModel> obtenerHistoretasPorCreador(String creador);
-	public List<HistorialEntity> obtenerHistorialHistorietasPorUsuario(String usuario);
+	public CharacterModel obtenerPersonaje(String usrsession, String nombre, String historieta, String serie);
+	public List<ComicModel> obtenerHistorietasPorPersonaje(String usrsession, String nombre);
+	public ImgDescCharacter obtenerImgDescPersonaje(String usrsession, String nombre);
+	public List<ComicModel> obtenerHistorietas(String usrsession);
+	public ComicModel obtenerHistorietaPorId(String usrsession, String id);
+	public List<HistorialEntity> obtenerHistorialPorUsuario(String usrsession, String usuario);
+	public List<ComicModel> obtenerHistoretasPorCreador(String usrsession, String creador);
+	public List<HistorialEntity> obtenerHistorialHistorietasPorUsuario(String usrsession, String usuario);
 	
 }
