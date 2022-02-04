@@ -1,5 +1,11 @@
 package com.pruebatecnica.demo.consumers.models;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class ComicModel {
 
     private final static long serialVersionUID = -1355720629406189571L;
@@ -19,6 +25,8 @@ public class ComicModel {
     private String format;
     private String pageCount;
     private String resourceURI;
+    @JsonIgnore
+    private List<String> charactersIds;
 
     public ComicModel() {}
 
@@ -141,5 +149,33 @@ public class ComicModel {
     public void setResourceURI(String resourceURI) {
         this.resourceURI = resourceURI;
     }
+
+	public List<String> getCharactersIds() {
+		if (charactersIds == null) {
+			charactersIds = new ArrayList<>();
+		}
+		return charactersIds;
+	}
+
+	public void setCharactersIds(List<String> charactersIds) {
+		this.charactersIds = charactersIds;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ComicModel other = (ComicModel) obj;
+		return Objects.equals(id, other.id);
+	}
     
 }

@@ -1,32 +1,64 @@
-package com.pruebatecnica.demo.Entity;
+package com.pruebatecnica.demo.entity;
 
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
+import com.pruebatecnica.demo.entity.compositekey.ComicCharacterId;
+
+@Entity()
 @Table(name = "COMIC_CHARACTER")
+//@IdClass(ComicCharacterId.class)
 public class ComicCharacterEntity {
 
-    private String idComic;
-    private String idCharacter;
+	@EmbeddedId
+	private ComicCharacterId id;
+	private String modified;
 
-    public ComicCharacterEntity() {
+//	@Id
+//    private String comicId;
+//	@Id
+//    private String characterId;
+
+	public ComicCharacterEntity() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public String getIdComic() {
-		return idComic;
+	public ComicCharacterEntity(ComicCharacterId id, String modified) {
+		super();
+		this.id = id;
+		this.modified = modified;
 	}
 
-	public void setIdComic(String idComic) {
-		this.idComic = idComic;
+	public ComicCharacterId getId() {
+		return id;
 	}
 
-	public String getIdCharacter() {
-		return idCharacter;
+	public void setId(ComicCharacterId id) {
+		this.id = id;
 	}
 
-	public void setIdCharacter(String idCharacter) {
-		this.idCharacter = idCharacter;
+	public String getModified() {
+		return modified;
 	}
+
+	public void setModified(String modified) {
+		this.modified = modified;
+	}
+
+//	public String getComicId() {
+//		return comicId;
+//	}
+//	public void setComicId(String comicId) {
+//		this.comicId = comicId;
+//	}
+//	public String getCharacterId() {
+//		return characterId;
+//	}
+//	public void setCharacterId(String characterId) {
+//		this.characterId = characterId;
+//	}
 
 }

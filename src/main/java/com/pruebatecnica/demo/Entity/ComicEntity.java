@@ -1,4 +1,4 @@
-package com.pruebatecnica.demo.Entity;
+package com.pruebatecnica.demo.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

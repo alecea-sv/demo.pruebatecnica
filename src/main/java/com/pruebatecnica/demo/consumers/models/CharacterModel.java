@@ -1,6 +1,11 @@
 package com.pruebatecnica.demo.consumers.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class CharacterModel implements Serializable {
 
@@ -12,6 +17,8 @@ public class CharacterModel implements Serializable {
 	private String modified;
 	private String resourceURI;
 	private String thumbnail;
+	@JsonIgnore
+	private List<String> comicsIds;
 
 	public CharacterModel() {
 	}
@@ -64,5 +71,32 @@ public class CharacterModel implements Serializable {
 		this.thumbnail = thumbnail;
 	}
 
+	public List<String> getComicsIds() {
+		if (comicsIds == null) {
+			comicsIds = new ArrayList<>();
+		}
+		return comicsIds;
+	}
+
+	public void setComicsIds(List<String> comicsIds) {
+		this.comicsIds = comicsIds;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CharacterModel other = (CharacterModel) obj;
+		return Objects.equals(id, other.id);
+	}
 
 }

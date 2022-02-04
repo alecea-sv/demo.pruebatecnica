@@ -2,10 +2,10 @@ package com.pruebatecnica.demo.services;
 
 import java.util.List;
 
-import com.pruebatecnica.demo.Entity.HistorialEntity;
 import com.pruebatecnica.demo.consumers.models.CharacterModel;
 import com.pruebatecnica.demo.consumers.models.ComicModel;
 import com.pruebatecnica.demo.dto.ImgDescCharacter;
+import com.pruebatecnica.demo.entity.HistorialEntity;
 
 public interface ApiService {
 
@@ -15,7 +15,7 @@ public interface ApiService {
 	public List<ComicModel> obtenerHistorietas(String usrsession);
 	public ComicModel obtenerHistorietaPorId(String usrsession, String id);
 	public List<HistorialEntity> obtenerHistorialPorUsuario(String usrsession, String usuario);
-	public List<ComicModel> obtenerHistoretasPorCreador(String usrsession, String creador);
+	public List<ComicModel> obtenerHistorietasPorCreador(String usrsession, String creador);
 	public List<HistorialEntity> obtenerHistorialHistorietasPorUsuario(String usrsession, String usuario);
 	
 }

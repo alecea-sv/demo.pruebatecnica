@@ -1,4 +1,4 @@
-package com.pruebatecnica.demo.Entity;
+package com.pruebatecnica.demo.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,10 +8,10 @@ import javax.persistence.Table;
 @Table(name = "HISTORIAL")
 public class HistorialEntity {
 
-	private String username;
-	private String searchType;
 	@Id
 	private String searched;
+	private String username;
+	private String searchType;
 	
 	public HistorialEntity() {
 		super();
@@ -40,6 +40,11 @@ public class HistorialEntity {
 
 	public void setSearched(String searched) {
 		this.searched = searched;
+	}
+
+	@Override
+	public String toString() {
+		return "HistorialEntity [searched=" + searched + ", username=" + username + ", searchType=" + searchType + "]";
 	}
 	
 }

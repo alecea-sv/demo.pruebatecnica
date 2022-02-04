@@ -63,7 +63,7 @@ public abstract class InvokeService {
 		sbUri.append(this.endpoint);
 		sbUri.append(resource);
 
-		if (queryParams != null) {
+		if (queryParams != null && !queryParams.isEmpty()) {
 			sbUri.append("?");
 			queryParams.entrySet().forEach((entry) -> {
 				sbUri.append(entry.getKey());
@@ -71,6 +71,8 @@ public abstract class InvokeService {
 				sbUri.append(entry.getValue());
 				sbUri.append("&");
 			});
+		} else {
+			sbUri.append("?");
 		}
 
 		long ts = System.currentTimeMillis();
